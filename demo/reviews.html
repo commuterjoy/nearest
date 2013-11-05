@@ -1,6 +1,6 @@
 
 <script src="reviews.js"></script>
-<script src="nearest.js"></script>
+<script src="../nearest.js"></script>
 <style>
  body { margin: 2em auto; max-width: 800px; }
  li { font-family: georgia, serif; line-height: 150%; }
@@ -23,7 +23,7 @@
 var coords = window.location.hash.substring(1).split(",")
   , lat = coords[0]
   , lon = coords[1]
-  , results = new Nearest().find(reviews, 3, 10, lat, lon)
+  , results = new Nearest().find(reviews, { coords: [51.5349, -0.1219], limit: 10, within: 3 } )
   , r = document.getElementById('reviews')
   , template = '<a href="http://www.theguardian.com/%path" target="_blank">%restaurant</a>, %postcode <small>(%distance km)</small>'
   , maps = function(postcodes) {

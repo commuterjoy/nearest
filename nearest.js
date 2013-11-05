@@ -29,8 +29,14 @@ Nearest.prototype.distanceInKm = function (lat1,lon1,lat2,lon2) {
       return d;
 }
 
-Nearest.prototype.find = function( dataSource, maximumDistance, limit, lat, lon ) {
-    var that = this;
+Nearest.prototype.find = function( dataSource, opts ) {
+
+    var within = opts.within || 6000 // in km
+      , limit = opts.limit || 50
+      , lat = opts.coords[0]
+      , lon = opts.coords[1]
+      , that = this;
+
     return dataSource.map(function (record, index) { // calculate distance from give coords
         return {
          distance: parseFloat(that.distanceInKm(lat, lon, record.lat, record.lon).toFixed(2)),
@@ -39,7 +45,7 @@ Nearest.prototype.find = function( dataSource, maximumDistance, limit, lat, lon 
     }).sort(function (a,b) { // sort by distance
         return a.distance - b.distance
     }).filter(function (record) { // remove records above a given distance 
-        return record.distance < maximumDistance
+        return record.distance < within 
     }).map(function (record) { // return the original record
         dataSource[record.i].distance = record.distance;
         return dataSource[record.i];
