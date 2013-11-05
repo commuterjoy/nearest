@@ -23,6 +23,13 @@ Include in your page,
 results = new Nearest().find(dataSource, { coords: [51.5349, -0.1219], limit: 10, within: 3 } )
 ```
 
+The parameters in full,
+
+- `dataSource` - a data structure as per the format outline below.
+- `coords` - the lat/lon pair of the central location you want the search to start from.
+- `limit` - limit the number of results returned.
+- `within` - limit results to within _n_ kilometers.
+
 ## Data
 
 Nearest.js requires a datasource containing a list of objects, each containing a lat and lon property.
