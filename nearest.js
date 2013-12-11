@@ -14,7 +14,7 @@ var Nearest = function () {
     return this;
 }
 
-// credit: ... 
+// credit: http://www.perlmonks.org/?node_id=150054
 Nearest.prototype.distanceInKm = function (lat1,lon1,lat2,lon2) {
     var deg2rad = function(deg) { return deg * (Math.PI/180) }
       , R = 6371 // Radius of the earth in km
