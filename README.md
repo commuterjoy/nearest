@@ -7,7 +7,7 @@ Nearest.js is a small utility library for calculating the nearest set of things 
 
 For example, a list of restaurant reviews near to where you work,
 
-![](resources/images/nearest.png)
+![](https://raw.github.com/commuterjoy/nearest/master/resources/images/nearest.png)
 
 ## API
 
