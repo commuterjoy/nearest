@@ -9,14 +9,31 @@
     body { margin: 2em auto; max-width: 800px; }
     li { font-family: georgia, serif; line-height: 150%; }
     a { text-decoration: none; color: blue; }
-    small { color: green; } 
+    small { color: green; }
+    .cities a { display: inline-block; padding-right: 8px; margin-right: 4px; border-right: 1px solid #333; }
+    .container { padding: 16px; }
+    ul { list-style: none; padding-left: 0; }
   </style>
 </head>
 <body>
-  <p>
-      Usage: <a href="reviews.html#51.5349,-0.1219">reviews.html#51.5349,-0.1219</a> (Kings Place)
-  </p>
-  <h2 id="location">Nearest restaurants</h2>
-  <ul id="reviews"></ul>
+  <div class="container">
+    <p>
+        Usage: <a href="reviews.html#51.5349,-0.1219">reviews.html#51.5349,-0.1219</a> (Kings Place)
+    </p>
+    <hr/>
+    <p class="cities">
+      <a href="#51.483333,-3.183333">Cardiff</a>
+      <a href="#53.466667,-2.233333">Manchester</a>
+      <a href="#55.953056,-3.188889">Edinburgh</a>
+      London - 
+      <a href="#51.5349,-0.1219">North</a>
+      <a href="#51.5186,0.0813">East</a>
+      <a href="#51.5130,-0.1310">Central</a>
+      <a href="#51.5033,-0.1147">South</a>
+      <a href="#51.5096,-0.2043">West</a>
+    </p>
+    <h2 id="location">Nearest restaurants</h2>
+    <ul id="reviews"></ul>
+  </div>
 </body>
 </html>
