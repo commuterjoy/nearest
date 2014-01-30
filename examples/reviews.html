@@ -1,46 +1,22 @@
-<script src="reviews.js"></script>
-<script src="../nearest.js"></script>
-<style>
- body { margin: 2em auto; max-width: 800px; }
- li { font-family: georgia, serif; line-height: 150%; }
- a { text-decoration: none; color: blue; }
- small { color: green; } 
-</style>
-
-<p>
-    Usage: <a href="reviews.html#51.5349,-0.1219">reviews.html#51.5349,-0.1219</a> (Kings Place)
-</p>
-<h2 id="location">Nearest restaurants</h2>
-<ul id="reviews"></ul>
-<img src="" id="map">
-
-<script>
-
-/** -------- */
-
-// we expect the co-ordinates in the url hash, ie. path/to/document#51.507482,-0.051202
-var coords = window.location.hash.substring(1).split(",")
-  , lat = coords[0]
-  , lon = coords[1]
-  , results = new Nearest().find(reviews, { coords: [lat, lon], limit: 10, within: 3 } )
-  , r = document.getElementById('reviews')
-  , template = '<a href="http://www.theguardian.com/%path" target="_blank">%restaurant</a>, %postcode <small>(%distance km)</small>'
-  , maps = function(postcodes) {
-        var host = 'http://maps.googleapis.com/maps/api/staticmap?size=600x600&maptype=roadmap&sensor=false&'
-        var markers = postcodes.map(function (p) { return 'markers=' + p }).join("&") 
-        return host + markers;
-    }
-  , out =  results.forEach(function (review) {
-        var i = document.createElement('li');
-        i.innerHTML = ' <a href="http://www.theguardian.com/'+ review.path + '" target="_blank">'+review.restaurant +'</a>';
-        i.innerHTML += ', ' + review.postcode;
-        i.innerHTML += ' <small>' + review.distance + ' km</small> - reviewed by ' + review.reviewer;
-        r.appendChild(i);
-    })
-   , postcodes = results.map(function(r){
-            return r.postcode;
-            });
-
-document.getElementById('map').src = maps(postcodes);    
-
-</script>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <script src="reviews.js"></script>
+  <script src="example.min.js"></script>
+  <style>
+    body { margin: 2em auto; max-width: 800px; }
+    li { font-family: georgia, serif; line-height: 150%; }
+    a { text-decoration: none; color: blue; }
+    small { color: green; } 
+  </style>
+</head>
+<body>
+  <p>
+      Usage: <a href="reviews.html#51.5349,-0.1219">reviews.html#51.5349,-0.1219</a> (Kings Place)
+  </p>
+  <h2 id="location">Nearest restaurants</h2>
+  <ul id="reviews"></ul>
+</body>
+</html>

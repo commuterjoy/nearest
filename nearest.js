@@ -10,6 +10,7 @@
   *     ]
   *
   */
+
 var Nearest = function () {
 
     // credit: http://www.perlmonks.org/?node_id=150054
@@ -54,4 +55,4 @@ var Nearest = function () {
     return this;
 }
 
-exports.nearest = Nearest;
+module.exports = Nearest;

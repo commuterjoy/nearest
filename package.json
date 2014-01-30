@@ -2,7 +2,7 @@
   "author": "Matt Chadburn",
   "name": "nearestjs",
   "description": "Utility library for calculating the nearest set of things to a target thing, geospatially speaking",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "repository": {
     "url": "https://github.com/commuterjoy/nearest"
   },
@@ -13,7 +13,9 @@
   "dependencies": {},
   "devDependencies": {
     "mocha": "*",
-    "should": "*"
+    "should": "*",
+    "browserify": "*",
+    "uglify-js": "1.*"
   },
   "optionalDependencies": {},
   "engines": {

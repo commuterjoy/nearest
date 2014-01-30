@@ -38,6 +38,7 @@ describe('Nearest', function(){
                 coords: [51.5349, -0.1219],
             })[1].restaurant).should.equal('Mayfields');
         })
+
         it('should limit results', function() {
             (new Nearest().find(db, {
                 coords: [51.5349, -0.1219],
@@ -46,6 +47,12 @@ describe('Nearest', function(){
             }).length).should.equal(2);
         })
 
+        it('should return no results when it does not find anything', function(){
+            (new Nearest().find(db, {
+                coords: [56.5349, -0.1219],
+                within: 1
+            }).length).should.equal(0);
+        })
 
     })
 })
