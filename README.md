@@ -1,4 +1,3 @@
-
 # Nearest.js
 
 Nearest.js is a small utility library for calculating the nearest set of things to a target thing, geospatially speaking. In JavaScript.
@@ -20,7 +19,11 @@ Include in your page,
 ... and the `Nearest.find` function will return the items in that list sorted approximately in order of the distance from a given coordinate.
 
 ```
-results = new Nearest().find(dataSource, { coords: [51.5349, -0.1219], limit: 10, within: 3 } )
+results = new Nearest().find(dataSource, {
+   coords: [51.5349, -0.1219],
+   limit: 10, 
+   within: 3
+})
 ```
 
 The parameters in full,
