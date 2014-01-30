@@ -2,7 +2,7 @@
 var assert = require('assert')
   , should = require('should')
   , fs = require('fs') 
-  , Nearest = require('../nearest.js').nearest
+  , Nearest = require('../nearest.js')
   , db;
 
 beforeEach(function(done){
